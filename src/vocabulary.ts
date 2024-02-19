@@ -405,7 +405,7 @@ export const items = [
 	'석상',
 	'고문서',
 	'두루마리',
-	'CherryPick',
+	'hotomoe',
 	'비틀어 딴 과일',
 	'<여기에 임의의 문자열>',
 	'화석',

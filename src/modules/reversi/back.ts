@@ -421,7 +421,7 @@ class Session {
 	}
 
 	/**
-	 * 対局が始まったことをCherryPickに投稿します
+	 * 対局が始まったことをhotomoeに投稿します
 	 */
 	private postGameStarted = async () => {
 		const text = this.isSettai
@@ -432,7 +432,7 @@ class Session {
 	}
 
 	/**
-	 * CherryPickに投稿します
+	 * hotomoeに投稿します
 	 * @param text 投稿内容
 	 */
 	private post = async (text: string, renote?: any) => {
