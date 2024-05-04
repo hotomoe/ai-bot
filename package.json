@@ -1,5 +1,5 @@
 {
-	"_v": "2.0.1",
+	"_v": "2.0.1+hotomoe",
 	"type": "module",
 	"main": "./built/index.js",
 	"scripts": {
