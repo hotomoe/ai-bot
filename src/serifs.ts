@@ -1,4 +1,5 @@
 // せりふ
+import josa from "@/utils/josa.js";
 
 export default {
 	core: {
@@ -36,19 +37,19 @@ export default {
 			],
 
 			specify: (thing, name) => name ? [
-				`${name}, ${thing}라는건 정말 대단해요!`,
-				`${name}, ${thing}라는건 정말 대단하네요 ~♪`
+				`${name}, ${josa(thing, '이', '')}라는건 정말 대단해요!`,
+				`${name}, ${josa(thing, '이', '')}라는건 정말 대단하네요 ~♪`
 			] : [
-				`${thing}라는건 대단해요!`,
-				`${thing}라는건 대단하네요 ~♪`
+				`${josa(thing, '이', '')}라는건 대단해요!`,
+				`${josa(thing, '이', '')}라는건 대단하네요 ~♪`
 			],
 
 			specify2: (thing, name) => name ? [
-				`${name}, ${thing}라는건 정말 대단해요!`,
-				`${name}, ${thing}라는건 정말 대단하네요 ~♪`
+				`${name}, ${josa(thing, '이', '')}라는건 정말 대단해요!`,
+				`${name}, ${josa(thing, '이', '')}라는건 정말 대단하네요 ~♪`
 			] : [
-				`${thing}라는건 대단해요!`,
-				`${thing}라는건 대단하네요 ~♪`
+				`${josa(thing, '이', '')}라는건 대단해요!`,
+				`${josa(thing, '이', '')}라는건 대단하네요 ~♪`
 			],
 		},
 
@@ -105,7 +106,7 @@ export default {
 		suki: {
 			normal: '엣... 고맙습니다...♪',
 
-			love: name => `저도 그... ${name}을 정말 좋아해요!`,
+			love: name => `저도 그... ${josa(name, '을', '를')} 정말 좋아해요!`,
 
 			hate: null
 		},
@@ -134,7 +135,7 @@ export default {
 			hate: '...머리 괜찮아요?'
 		},
 
-		itai: name => name ? `${name}, 괜찮아요...?아픈거 아픈거 살살 날아가라!` : '괜찮아요...? 아픈거 다 날아가라!',
+		itai: name => name ? `${name}, 괜찮아요...? 아픈 것들아, 살살 날아가라!` : '괜찮아요...? 아픈 거 다 날아가라!',
 
 		ote: {
 			normal: '쿵... 저는 댕댕이가 아니라구요...?',
@@ -148,7 +149,7 @@ export default {
 
 		transferNeedDm: '채팅으로 이야기하지 않으시겠어요?',
 
-		transferCode: code => `알겠습니다.\n코드는 "${code}" 에요!`,
+		transferCode: code => `알겠습니다.\n코드는 "${josa(code, '이에', '예')}"요!`,
 
 		transferFailed: '음... 코드가 틀린 것 같아요',
 
@@ -162,7 +163,7 @@ export default {
 	},
 
 	dice: {
-		done: res => `${res}이에요!`
+		done: res => `${josa(res, '이에', '예')}이에요!`
 	},
 
 	birthday: {
@@ -186,7 +187,7 @@ export default {
 		/**
 		 * 対局開始
 		 */
-		started: (name, strength) => `${name}과 대국을 시작했어요! (난이도${strength})`,
+		started: (name, strength) => `${name}과 대국을 시작했어요! (난이도: ${strength})`,
 
 		/**
 		 * 接待開始
@@ -216,7 +217,7 @@ export default {
 		/**
 		 * 引き分けたとき
 		 */
-		drawn: name => `${name}과 비겼어요~`,
+		drawn: name => `${name}과의 대전에서 비겼어요!`,
 
 		/**
 		 * 接待で引き分けたとき
@@ -226,7 +227,7 @@ export default {
 		/**
 		 * 相手が投了したとき
 		 */
-		youSurrendered: name => `${name}이 항복해버렸어요`,
+		youSurrendered: name => `${name}이 항복해버렸어요...`,
 
 		/**
 		 * 接待してたら相手が投了したとき
@@ -379,7 +380,7 @@ export default {
 	},
 
 	chart: {
-		post: '인스턴스 투고 수에요!',
+		post: 'hotomoe의 노트 수 차트에요!',
 		foryou: '새로운 차트를 그렸어요!'
 	},
 
@@ -443,7 +444,7 @@ export default {
 			'와! 좋았어!',
 			'( ˘ω˘)',
 			'(｀・ω・´)',
-			'앗, 혀 깨물었어',
+			'앗, 혀를 깨물었어요',
 			'요람부터 무덤까지 절 떠날 수 없어요',
 			'웅냥',
 			'야옹!',
@@ -461,8 +462,8 @@ export default {
 			'아이가 왔어요!',
 			'하냥?',
 		],
-		want: item => `${item}, 갖고 싶어...`,
-		see: item => `오늘 산책하던 중에, 길에 ${item}(이)가 떨어져 있는 것을 봤어요!`,
+		want: item => `${josa(item, '을', '를')} 갖고 싶어요...`,
+		see: item => `오늘 산책하던 중에, 길에 ${josa(item, '이', '가')} 떨어져 있는 것을 봤어요!`,
 		expire: item => `방금 알게된 사실인데, ${item}의 유통기한이 지났어요...`,
 	},
 };
